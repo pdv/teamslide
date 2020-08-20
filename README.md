@@ -34,14 +34,6 @@ Example
 curl 'localhost:8080/search?location=19.1,19.1&radius=10000&budget=200'
 ```
 
-### Operation
-
-```
-PORT=8080
-DATABASE_URL='postgreseql://your.postgres/database'
-java $JVM_OPTS -jar target/teamslide-standalone.jar
-```
-
 ### Dev Setup
 
 #### Requirements
@@ -51,18 +43,21 @@ java $JVM_OPTS -jar target/teamslide-standalone.jar
 
 #### Commands
 
-```
-lein run
-```
-Run the dev server
-
+Run tests
 ```
 lein test
 ```
-Run tests
 
+Run the dev server (by default, on `localhost:8080` using `postgresql://localhost:5432/teamslide`)
+```
+lein run
+```
+
+
+Build production jar
 ```
 lein uberjar
+PORT=8080
+DATABASE_URL='postgreseql://your.postgres/database'
+java $JVM_OPTS -jar target/teamslide-standalone.jar
 ```
-Build a production jar
-

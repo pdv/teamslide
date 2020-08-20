@@ -14,7 +14,7 @@
 
 (def port (Integer. (or (System/getenv "PORT") "8080")))
 (def db (or (System/getenv "DATABASE_URL")
-            "postgresql://localhost:5433/postgres"))
+            "postgresql://localhost:5432/teamslide"))
 
 (def parse-int #(Integer/parseInt %))
 (def parse-double #(Double/parseDouble %))
